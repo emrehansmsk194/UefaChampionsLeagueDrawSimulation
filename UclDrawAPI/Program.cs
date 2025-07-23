@@ -15,7 +15,7 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<ITournamentService, TournamentService>();
 builder.Services.AddAutoMapper(cfg => cfg.AddProfile<MappingConfig>());
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("Default Connection")));
+options.UseNpgsql(builder.Configuration.GetConnectionString("Default Connection")));
 builder.Services.AddEndpointsApiExplorer(); // ← Bu eksikti  
 builder.Services.AddSwaggerGen(c =>
 {
