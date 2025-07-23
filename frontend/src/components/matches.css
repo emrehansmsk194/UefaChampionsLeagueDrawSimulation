@@ -1,0 +1,86 @@
+.match-container{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto;
+    border-radius: 15px;
+    width: 50%;
+    
+}
+
+
+.match-container:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+.match-container h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 75px;
+  aspect-ratio: 1;
+  --g:no-repeat radial-gradient(farthest-side ,#0000 calc(95% - 2px),#fff calc(100% - 2px) 98%,#0000 101%);
+  background:var(--g),var(--g),var(--g),var(--g),var(--g),var(--g),var(--g),var(--g);
+  background-size: 15px 15px;
+  animation: l10 1s infinite alternate linear;
+}
+@keyframes l10 {
+  0%,30% {background-position:0 0,50% 0,100% 0,0 50%,100% 50%,0 100%,50% 100%,100% 100%}
+  70%,100% {background-position:15% 15%,50% 0,85% 15%,0 50%,100% 50%,15% 85%,50% 100%,85% 85%}
+}
+@media (max-width: 768px) {
+  .match-container {
+    width: 70%;
+    gap: 8px;
+    padding: 0.8rem;
+    margin: 0.8rem auto;
+  }
+  .match-container h2{
+    font-size: 1.3rem;
+  }
+  .match-container img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+}
+@media (max-width: 480px) {
+    .match-container {
+        width: 90%;
+        flex-direction: row; 
+        gap: 8px;
+        padding: 0.8rem 0.5rem;
+        margin: 0.8rem auto;
+        min-height: 60px;
+    }
+    
+    .match-container h2 {
+        font-size: 0.9rem;
+        text-align: center;
+        line-height: 1.2;
+        flex: 1;
+        margin: 0;
+        padding: 0 5px;
+        word-break: break-word;
+    }
+    
+    .match-container img {
+        width: 35px !important;
+        height: 35px !important;
+        flex-shrink: 0;
+    }
+    
+    
+}
+
+
+

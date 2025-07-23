@@ -1,0 +1,65 @@
+.teamContainer {
+    display: flex;
+    gap: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3px;
+}
+.teamContainer:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .teamContainer {
+        gap: 8px;
+        padding: 8px;
+        margin-bottom: 5px;
+    }
+    
+    .teamContainer img {
+        width: 45px !important;
+        height: 45px !important;
+        padding: 3px !important;
+    }
+    
+    .teamContainer p {
+        font-size: 0.95rem;
+    }
+    
+    .teamContainer h2 {
+        font-size: 1.3rem;
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .teamContainer {
+        gap: 10px;
+        padding: 10px;
+        justify-content: flex-start;
+    }
+    
+    .teamContainer img {
+        width: 40px !important;
+        height: 40px !important;
+        padding: 2px !important;
+    }
+    
+    .teamContainer p {
+        font-size: 0.9rem;
+        flex: 1;
+    }
+    
+    .teamContainer h2 {
+        font-size: 1.2rem;
+        margin: 0.3rem 0;
+    }
+}
+@media (max-width: 400px) {
+    .teamContainer p{
+        font-size: 0.7rem;
+    }
+        
+   
+}
