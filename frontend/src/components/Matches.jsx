@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useRef } from 'react'
 import { tournamentApi } from '../services/apiService'
-import './Matches.css'
+import './matches.css'
 
 const Matches = ({selectedTeamId}) => {
 const [matches, setMatches] = useState([]);
