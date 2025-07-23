@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create( {
-    baseURL: 'https://localhost:7285/api',
+    baseURL: 'https://uefachampionsleaguedrawsimulation-production-319a.up.railway.app/api',
     headers: {
         'Content-Type': 'application/json',
         
