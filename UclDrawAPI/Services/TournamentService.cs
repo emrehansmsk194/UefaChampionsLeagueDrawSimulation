@@ -37,7 +37,9 @@ namespace UclDrawAPI.Services
 						HomeTeam = i%2 == 0 ? drawnTeams[i].Name : selectedTeam.Name,
 						AwayTeam = i%2 == 0 ? selectedTeam.Name : drawnTeams[i].Name,
 						HomeCountry = i%2 == 0 ? drawnTeams[i].Country : selectedTeam.Country,
-						AwayCountry = i%2 == 0 ? selectedTeam.Country : drawnTeams[i].Country
+						AwayCountry = i%2 == 0 ? selectedTeam.Country : drawnTeams[i].Country,
+						HomeLogoUrl = i%2 == 0? drawnTeams[i].LogoUrl : selectedTeam.LogoUrl,
+						AwayLogoUrl = i%2 == 0 ? selectedTeam.LogoUrl : drawnTeams[i].LogoUrl
 					};
 					matches.Add(matchDTO);
 				}
