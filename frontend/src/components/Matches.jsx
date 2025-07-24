@@ -5,6 +5,7 @@ import { useRef } from 'react'
 import { tournamentApi } from '../services/apiService'
 import './matches.css'
 
+
 const Matches = ({selectedTeamId}) => {
 const [matches, setMatches] = useState([]);
 const [loading, setLoading] = useState(false);
@@ -76,6 +77,7 @@ const shuffleMatches = (matchData) => {
 
 
   return (
+
     <div ref={matchesRef}>
       {      loading ? <div className="loader"></div> :   
             <ul>
@@ -88,7 +90,9 @@ const shuffleMatches = (matchData) => {
                 ))}
             </ul>
         }
+        
     </div>
+    
   )
 }
 

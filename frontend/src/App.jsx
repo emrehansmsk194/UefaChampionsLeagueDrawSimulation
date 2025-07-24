@@ -6,6 +6,9 @@ import { teamsApi } from './services/apiService';
 import { tournamentApi } from './services/apiService';
 import Matches from './components/Matches';
 import React from 'react'
+import html2canvas from 'html2canvas';
+
+
 
 
 function App() {
@@ -14,6 +17,8 @@ const [teams, setTeams] = useState([]);
 const [selectedTeamId, setSelectedTeamId] = useState(null);
 const [selectedStage, setSelectedStage] = useState(0);
 const [draw, setDraw] = useState(false);
+
+
 
 useEffect(() => {
   fetchAllTeams();
@@ -29,6 +34,23 @@ const fetchAllTeams = async () => {
   }
 }
  const filteredTeams = teams.filter(team => team.stage === selectedStage);
+
+ const takeScreenshot = async () => {
+  const element = document.getElementsByClassName('matches-container')[0];
+  if (element) {
+    const canvas = await html2canvas(element, {
+      useCORS: true,
+      allowTaint: true,
+      proxy: false,
+      scale: 2
+    });
+    const dataUrl = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.href = dataUrl;
+    link.download = 'matches_screenshot.png';
+    link.click();
+  }
+} 
 
   return (
     <>
@@ -90,8 +112,13 @@ const fetchAllTeams = async () => {
     <div className='button-container'>
   <button className='button-style' style={{backgroundColor: 'red'}} onClick={() => setDraw(false)}>Reset Draw</button>
   </div>
-   <Matches selectedTeamId={selectedTeamId} />
-  
+  <div className = "matches-container">
+   <Matches selectedTeamId={selectedTeamId}  />
+  <div className='button-container'>
+    <button onClick={takeScreenshot} className='button-style' style={{background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)', color: 'black'}}>📸Screenshot</button>
+  </div>
+   
+  </div>
    </>
  
 }
