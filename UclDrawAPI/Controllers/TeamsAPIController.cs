@@ -26,7 +26,9 @@ namespace UclDrawAPI.Controllers
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		public async Task<ActionResult> GetAllTeams()
 		{
-			var teams = await _dbContext.Teams.ToListAsync();
+			var teams = await _dbContext.Teams
+				.OrderBy(x => x.Id)
+				.ToListAsync();
 			if (teams == null || !teams.Any())
 			{
 				return NotFound("No teams found.");
